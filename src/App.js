@@ -19,9 +19,6 @@ class App extends Component {
       <>
         <Phonebook
           contacts={this.state.contacts}
-          // name={this.state.name}
-          // handleChange={this.handleChange}
-          // handleSubmit={this.handleSubmit}
           addContact={this.addContact}
         />
 

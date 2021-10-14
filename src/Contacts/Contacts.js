@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Contacts = ({ contacts }) => {
   console.log(contacts);
@@ -7,7 +7,9 @@ const Contacts = ({ contacts }) => {
       <ul>
         {contacts.map(contact => (
           <li key={contact.id}>
-            <p>{contact.name}</p>
+            <p>
+              {contact.name}: {contact.number}
+            </p>
           </li>
         ))}
       </ul>
