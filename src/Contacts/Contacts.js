@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Contacts = ({ contacts }) => {
-  console.log(contacts);
-  return (
-    <>
-      <ul>
-        {contacts.map(contact => (
-          <li key={contact.id}>
-            <p>
-              {contact.name}: {contact.number}
-            </p>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
-};
+class Contacts extends Component {
+  filteredNames = () => {
+    return this.props.contacts.filter(({ name }) => {
+      return name.toLowerCase().includes(this.props.searchName.toLowerCase());
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <ul>
+          {this.filteredNames().map(({ id, name, number }) => (
+            <li key={id}>
+              <p>
+                {name}: {number}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </>
+    );
+  }
+}
 
 export default Contacts;
