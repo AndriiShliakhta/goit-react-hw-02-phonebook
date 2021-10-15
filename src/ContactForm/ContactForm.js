@@ -22,7 +22,7 @@ class ContactForm extends Component {
     });
 
     if (existingContact) {
-      alert('Contact ' + existingContact.name + ' is already in contacts.');
+      alert(existingContact.name + ' is already in contacts.');
       return;
     }
     this.props.addContact(this.state);
