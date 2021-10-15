@@ -16,10 +16,16 @@ class ContactForm extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
+
+    const existingContact = this.props.contacts.find(contact => {
+      return contact.name === this.state.name;
+    });
+
+    if (existingContact) {
+      alert('Contact ' + existingContact.name + ' is already in contacts.');
+      return;
+    }
     this.props.addContact(this.state);
-    this.reset();
-  };
-  reset = () => {
     this.setState({ ...INITIAL_STATE });
   };
 
