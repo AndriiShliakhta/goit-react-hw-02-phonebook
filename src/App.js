@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Phonebook from './Phonebook/Phonebook';
+import ContactForm from './ContactForm/ContactForm';
 import { v4 as uuidv4 } from 'uuid';
-import Contacts from './Contacts/Contacts';
+import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 
 class App extends Component {
@@ -22,14 +22,16 @@ class App extends Component {
   render() {
     return (
       <>
-        <Phonebook
+        <h1>Phonebook</h1>
+        <ContactForm
           contacts={this.state.contacts}
           addContact={this.addContact}
         />
+        <h2>Contacts</h2>
         <Filter find={this.findContact} />
 
         {this.state.contacts.length > 0 && (
-          <Contacts
+          <ContactList
             contacts={this.state.contacts}
             searchName={this.state.filter}
           />
