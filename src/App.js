@@ -26,7 +26,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <div className="phonebook">
         <h1>Phonebook</h1>
         <ContactForm
           contacts={this.state.contacts}
@@ -42,7 +42,7 @@ class App extends Component {
             deleteContact={this.deleteContact}
           />
         )}
-      </>
+      </div>
     );
   }
 }

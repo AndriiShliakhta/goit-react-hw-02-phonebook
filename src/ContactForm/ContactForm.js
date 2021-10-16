@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import styles from './ContactForm.module.css';
-// import PropTypes from 'prop-types';
+import styles from './ContactForm.module.css';
+import PropTypes from 'prop-types';
 
 const INITIAL_STATE = {
   name: '',
@@ -33,7 +33,7 @@ class ContactForm extends Component {
     const { name, number } = this.state;
 
     return (
-      <form action="" onSubmit={this.handleSubmit}>
+      <form action="" onSubmit={this.handleSubmit} className={styles.form}>
         <label>
           Name
           <input
@@ -61,14 +61,16 @@ class ContactForm extends Component {
         </label>
         <br />
 
-        <button type="submit">Add contact</button>
+        <button type="submit" className={styles.submitButton}>
+          Add contact
+        </button>
       </form>
     );
   }
 }
 export default ContactForm;
-// ContactForm.propTypes = {
-//   goodfeedback: PropTypes.number,
-//   neutralfeedback: PropTypes.number,
-//   badfeedback: PropTypes.number,
-// };
+
+ContactForm.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.string,
+};

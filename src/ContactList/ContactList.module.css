@@ -1,11 +1,13 @@
-.form label {
+.contactList {
+  list-style: none;
+}
+.contactList li {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
-.form input {
+.contactList li button {
   margin-left: 20px;
-}
-.submitButton {
   border: none;
   border-radius: 3px;
   color: #ffffff;

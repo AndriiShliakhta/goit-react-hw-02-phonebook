@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ContactListItem from './ContactListItem/ContactListItem';
+import styles from './ContactList.module.css';
 
 class ContactList extends Component {
   filteredNames = () => {
@@ -12,7 +13,7 @@ class ContactList extends Component {
   render() {
     const { deleteContact } = this.props;
     return (
-      <ul>
+      <ul className={styles.contactList}>
         {this.filteredNames().map(({ id, name, number }) => (
           <ContactListItem
             key={id}
